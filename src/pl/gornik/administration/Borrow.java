@@ -16,11 +16,11 @@ public class Borrow {
     public Borrow(Book book, Reader reader) {
         this.book = book;
         this.reader = reader;
-        returnDate = "30-04-2025";
+        this.returnDate = "30-04-2025";
         this.borrowDate = LocalDateTime.now();
     }
 
-    private final DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
+    private final DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm");
     private final String formattedBorrowDate = borrowDate.format(myFormatObj);
 
     public Book getBook() {
@@ -31,4 +31,7 @@ public class Borrow {
         return reader;
     }
 
+    public void presentBorrow (){
+        System.out.printf("Książka o tytule '%s' wypożyczona %s. Data zwrotu to: %s", book.getAuthor(), borrowDate, returnDate);
+    }
 }

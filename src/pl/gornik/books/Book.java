@@ -35,7 +35,12 @@ public class Book {
         return bookStatus;
     }
 
+    public void setBookStatus(BookStatus bookStatus) {
+        this.bookStatus = bookStatus;
+    }
+
     public void presentBook() {
         System.out.printf("Książka o tytule '%s' napisana przez %s Wydana w %d roku. Ma %d stron. Status książki - %s", title, author, yearOfRelease, pageCount, bookStatus.getName());
     }
+
 }
