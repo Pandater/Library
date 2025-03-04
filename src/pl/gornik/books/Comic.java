@@ -9,6 +9,6 @@ public class Comic extends Book{
     }
     @Override
     public void presentBook() {
-        System.out.printf("Komiks o tytule '%s' napisana przez %s Wydana w %d roku przez wydawnictwo %s. Ma %d stron. Status Komiksu - %s", super.getTitle(), super.getAuthor(), super.getYearOfRelease(), publisher, super.getPageCount(), super.getBookStatus().getName());
+        System.out.printf("Komiks o tytule '%s' napisana przez %s Wydana w %d roku przez wydawnictwo %s. Ma %d stron. Status Komiksu - %s.\n", super.getTitle(), super.getAuthor(), super.getYearOfRelease(), publisher, super.getPageCount(), super.getBookStatus().getName());
     }
 }

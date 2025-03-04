@@ -32,13 +32,13 @@ public class Library {
         }
     }
 
-    public static Book findBookByTitle (String title) {
+    public Book findBookByTitle (String title) {
         for (Book book : bookList) {
             if (book.getTitle().equalsIgnoreCase(title)) return book;
         }
         return null;
     }
-    public static List<Book> findBooksByAuthor (String author){
+    public List<Book> findBooksByAuthor (String author){
         List<Book> books = new ArrayList<>();
         for (Book book : bookList) {
             if (book.getAuthor().equalsIgnoreCase(author)) books.add(book);

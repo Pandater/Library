@@ -17,7 +17,10 @@ public class Librarian {
         else if (type.equalsIgnoreCase("Komiks"))  bookList.add(new Comic(title, author, yearOfRelease, pageCount, bookStatus, publisher));
         else System.out.println("Wprowadzono niepoprawny typ książki.");
     }
-    protected static boolean removeBook(String title, String author) {
+    public void addBook(Book book) {
+        bookList.add(book);
+    }
+    public static boolean removeBook(String title, String author) {
         for (Book book : bookList) {
             if (book.getAuthor().equalsIgnoreCase(author) && book.getTitle().equalsIgnoreCase(title)) {
                 bookList.remove(book);
@@ -26,7 +29,7 @@ public class Librarian {
         }
         return false;
     }
-    protected static boolean removeBook(Book book){
+    public static boolean removeBook(Book book){
         return bookList.remove(book);
     }
 
@@ -36,7 +39,7 @@ public class Librarian {
                     borrow.getBook().getTitle().equalsIgnoreCase(title) &&
                     borrow.getBook().getYearOfRelease() == yearOfRelease &&
                     borrow.getReader().equals(reader)){
-                borrow.getBook().setBookStatus(BookStatus.Available);
+                borrow.getBook().setBookStatus(BookStatus.AVAILABLE);
                 return  true;
             }
         }

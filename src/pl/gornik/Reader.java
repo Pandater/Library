@@ -16,9 +16,9 @@ public class Reader {
     }
 
     public static boolean borrowBook (Book book, Reader reader) {
-        if (book.getBookStatus().equals(BookStatus.Available)) {
+        if (book.getBookStatus().equals(BookStatus.AVAILABLE)) {
             new Borrow(book, reader);
-            book.setBookStatus(BookStatus.Borrowed);
+            book.setBookStatus(BookStatus.BORROWED);
             return true;
         } else return false;
     }
